@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<link type="text/css" charset="utf8" rel="stylesheet" href="../styles/jquery.dataTables.min.css">
+<script type="text/javascript" charset="utf8" src="../styles/jquery.min.js"></script>
+<script type="text/javascript" charset="utf8" src="../styles/jquery.dataTables.min.js"></script>
+<script type="text/javascript" class="init">
+$(document).ready( function () {
+$("#histogram").DataTable();
+} );
+</script>
+<body>
+<h1>Allocations for java.lang.ThreadLocal$ThreadLocalMap$Entry (java.base@11.0.8)</h2>
+<div id="bytesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
+<div id="instancesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
+<table id="histogram" class="display">
+<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th></tr></thead>
+<tbody>
+<tr><td>'09:09:13:26'</td><td>1792</td><td>56</td></tr>
+<tr><td>'09:09:13:31'</td><td>2368</td><td>74</td></tr>
+<tr><td>'09:09:13:36'</td><td>2624</td><td>82</td></tr>
+<tr><td>'09:09:13:41'</td><td>2752</td><td>86</td></tr>
+<tr><td>'09:09:13:46'</td><td>2944</td><td>92</td></tr>
+<tr><td>'09:09:13:51'</td><td>3136</td><td>98</td></tr>
+<tr><td>'09:09:14:01'</td><td>5536</td><td>173</td></tr>
+<tr><td>'09:09:14:06'</td><td>5920</td><td>185</td></tr>
+<tr><td>'09:09:14:12'</td><td>6272</td><td>196</td></tr>
+<tr><td>'09:09:14:17'</td><td>6560</td><td>205</td></tr>
+<tr><td>'09:09:14:27'</td><td>6752</td><td>211</td></tr>
+</tbody></table>
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+var dataBytes = google.visualization.arrayToDataTable([
+['Date', 'Bytes']
+,['09:09:13:26',1792]
+,['09:09:13:31',2368]
+,['09:09:13:36',2624]
+,['09:09:13:41',2752]
+,['09:09:13:46',2944]
+,['09:09:13:51',3136]
+,['09:09:14:01',5536]
+,['09:09:14:06',5920]
+,['09:09:14:12',6272]
+,['09:09:14:17',6560]
+,['09:09:14:27',6752]
+]);
+var dataInstances = google.visualization.arrayToDataTable([
+['Date', 'Instances']
+,['09:09:13:26',56]
+,['09:09:13:31',74]
+,['09:09:13:36',82]
+,['09:09:13:41',86]
+,['09:09:13:46',92]
+,['09:09:13:51',98]
+,['09:09:14:01',173]
+,['09:09:14:06',185]
+,['09:09:14:12',196]
+,['09:09:14:17',205]
+,['09:09:14:27',211]
+]);
+var optionsBytes = {
+ title: 'Bytes allocated',
+ hAxis: {title: 'Time'},
+ vAxis: {title: 'Bytes'},
+ legend: 'none'
+};
+var optionsInstances = {
+ title: 'Instances allocated',
+ hAxis: {title: 'Time'},
+ vAxis: {title: 'Instances'},
+ legend: 'none'
+};
+var chart = new google.visualization.LineChart(document.getElementById('bytesChart'));
+chart.draw(dataBytes, optionsBytes);
+var chart2 = new google.visualization.LineChart(document.getElementById('instancesChart'));
+chart2.draw(dataInstances, optionsInstances);
+}
+</script>
+</body>
+</html>
