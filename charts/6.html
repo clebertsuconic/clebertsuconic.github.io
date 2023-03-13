@@ -14,18 +14,16 @@ $("#histogram").DataTable();
 <div id="bytesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <div id="instancesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <table id="histogram" class="display">
-<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th></tr></thead>
+<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th><th>links</th></tr></thead>
 <tbody>
-<tr><td>'09:09:13:21'</td><td>961368</td><td>618</td></tr>
-<tr><td>'09:09:13:26'</td><td>961544</td><td>620</td></tr>
-<tr><td>'09:09:13:31'</td><td>961896</td><td>624</td></tr>
-<tr><td>'09:09:13:36'</td><td>962072</td><td>626</td></tr>
-<tr><td>'09:09:13:41'</td><td>962248</td><td>628</td></tr>
-<tr><td>'09:09:13:46'</td><td>962424</td><td>630</td></tr>
-<tr><td>'09:09:13:51'</td><td>962600</td><td>632</td></tr>
-<tr><td>'09:09:14:01'</td><td>962776</td><td>634</td></tr>
-<tr><td>'09:09:14:17'</td><td>962952</td><td>636</td></tr>
-<tr><td>'09:09:14:27'</td><td>963128</td><td>638</td></tr>
+<tr><td>2023/03/13 09:34:55:210</td><td>948376</td><td>759</td><td>  <a href='../logs/GC_histogram_20230313093455210.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093455210.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093455210.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:00:557</td><td>941848</td><td>610</td><td>  <a href='../logs/GC_histogram_20230313093500557.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093500557.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093500557.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:10:744</td><td>961016</td><td>614</td><td>  <a href='../logs/GC_histogram_20230313093510744.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093510744.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093510744.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:21:178</td><td>969240</td><td>616</td><td>  <a href='../logs/GC_histogram_20230313093521178.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093521178.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093521178.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:26:248</td><td>977464</td><td>618</td><td>  <a href='../logs/GC_histogram_20230313093526248.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093526248.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093526248.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:31:330</td><td>977640</td><td>620</td><td>  <a href='../logs/GC_histogram_20230313093531330.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093531330.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093531330.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:36:409</td><td>977864</td><td>623</td><td>  <a href='../logs/GC_histogram_20230313093536409.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093536409.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093536409.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:47:365</td><td>978040</td><td>625</td><td>  <a href='../logs/GC_histogram_20230313093547365.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093547365.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093547365.html'>Analyzer</a></td></tr>
 </tbody></table>
 <script>
 google.charts.load('current', {'packages':['corechart']});
@@ -33,29 +31,25 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 var dataBytes = google.visualization.arrayToDataTable([
 ['Date', 'Bytes']
-,['09:09:13:21',961368]
-,['09:09:13:26',961544]
-,['09:09:13:31',961896]
-,['09:09:13:36',962072]
-,['09:09:13:41',962248]
-,['09:09:13:46',962424]
-,['09:09:13:51',962600]
-,['09:09:14:01',962776]
-,['09:09:14:17',962952]
-,['09:09:14:27',963128]
+,['09:34:55',948376]
+,['09:35:00',941848]
+,['09:35:10',961016]
+,['09:35:21',969240]
+,['09:35:26',977464]
+,['09:35:31',977640]
+,['09:35:36',977864]
+,['09:35:47',978040]
 ]);
 var dataInstances = google.visualization.arrayToDataTable([
 ['Date', 'Instances']
-,['09:09:13:21',618]
-,['09:09:13:26',620]
-,['09:09:13:31',624]
-,['09:09:13:36',626]
-,['09:09:13:41',628]
-,['09:09:13:46',630]
-,['09:09:13:51',632]
-,['09:09:14:01',634]
-,['09:09:14:17',636]
-,['09:09:14:27',638]
+,['09:34:55',759]
+,['09:35:00',610]
+,['09:35:10',614]
+,['09:35:21',616]
+,['09:35:26',618]
+,['09:35:31',620]
+,['09:35:36',623]
+,['09:35:47',625]
 ]);
 var optionsBytes = {
  title: 'Bytes allocated',

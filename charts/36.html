@@ -10,15 +10,16 @@ $("#histogram").DataTable();
 } );
 </script>
 <body>
-<h1>Allocations for java.lang.invoke.MethodType (java.base@11.0.8)</h2>
+<h1>Allocations for [Ljava.lang.invoke.LambdaForm$Name; (java.base@11.0.8)</h2>
 <div id="bytesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <div id="instancesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <table id="histogram" class="display">
-<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th></tr></thead>
+<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th><th>links</th></tr></thead>
 <tbody>
-<tr><td>'09:09:13:26'</td><td>52680</td><td>1317</td></tr>
-<tr><td>'09:09:14:17'</td><td>53440</td><td>1336</td></tr>
-<tr><td>'09:09:14:27'</td><td>53520</td><td>1338</td></tr>
+<tr><td>2023/03/13 09:34:55:210</td><td>49616</td><td>657</td><td>  <a href='../logs/GC_histogram_20230313093455210.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093455210.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093455210.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:10:744</td><td>53848</td><td>711</td><td>  <a href='../logs/GC_histogram_20230313093510744.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093510744.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093510744.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:21:178</td><td>53896</td><td>712</td><td>  <a href='../logs/GC_histogram_20230313093521178.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093521178.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093521178.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:31:330</td><td>54016</td><td>715</td><td>  <a href='../logs/GC_histogram_20230313093531330.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093531330.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093531330.html'>Analyzer</a></td></tr>
 </tbody></table>
 <script>
 google.charts.load('current', {'packages':['corechart']});
@@ -26,15 +27,17 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 var dataBytes = google.visualization.arrayToDataTable([
 ['Date', 'Bytes']
-,['09:09:13:26',52680]
-,['09:09:14:17',53440]
-,['09:09:14:27',53520]
+,['09:34:55',49616]
+,['09:35:10',53848]
+,['09:35:21',53896]
+,['09:35:31',54016]
 ]);
 var dataInstances = google.visualization.arrayToDataTable([
 ['Date', 'Instances']
-,['09:09:13:26',1317]
-,['09:09:14:17',1336]
-,['09:09:14:27',1338]
+,['09:34:55',657]
+,['09:35:10',711]
+,['09:35:21',712]
+,['09:35:31',715]
 ]);
 var optionsBytes = {
  title: 'Bytes allocated',

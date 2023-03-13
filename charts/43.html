@@ -10,22 +10,15 @@ $("#histogram").DataTable();
 } );
 </script>
 <body>
-<h1>Allocations for java.util.concurrent.locks.ReentrantLock (java.base@11.0.8)</h2>
+<h1>Allocations for java.lang.ref.WeakReference (java.base@11.0.8)</h2>
 <div id="bytesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <div id="instancesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <table id="histogram" class="display">
-<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th></tr></thead>
+<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th><th>links</th></tr></thead>
 <tbody>
-<tr><td>'09:09:13:26'</td><td>37888</td><td>2368</td></tr>
-<tr><td>'09:09:13:31'</td><td>38720</td><td>2420</td></tr>
-<tr><td>'09:09:13:36'</td><td>39104</td><td>2444</td></tr>
-<tr><td>'09:09:13:41'</td><td>39472</td><td>2467</td></tr>
-<tr><td>'09:09:13:46'</td><td>39808</td><td>2488</td></tr>
-<tr><td>'09:09:13:51'</td><td>40208</td><td>2513</td></tr>
-<tr><td>'09:09:14:01'</td><td>40480</td><td>2530</td></tr>
-<tr><td>'09:09:14:12'</td><td>40400</td><td>2525</td></tr>
-<tr><td>'09:09:14:17'</td><td>40480</td><td>2530</td></tr>
-<tr><td>'09:09:14:27'</td><td>40656</td><td>2541</td></tr>
+<tr><td>2023/03/13 09:34:55:210</td><td>34784</td><td>1087</td><td>  <a href='../logs/GC_histogram_20230313093455210.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093455210.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093455210.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:00:557</td><td>34752</td><td>1086</td><td>  <a href='../logs/GC_histogram_20230313093500557.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093500557.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093500557.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:10:744</td><td>34944</td><td>1092</td><td>  <a href='../logs/GC_histogram_20230313093510744.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093510744.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093510744.html'>Analyzer</a></td></tr>
 </tbody></table>
 <script>
 google.charts.load('current', {'packages':['corechart']});
@@ -33,29 +26,15 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 var dataBytes = google.visualization.arrayToDataTable([
 ['Date', 'Bytes']
-,['09:09:13:26',37888]
-,['09:09:13:31',38720]
-,['09:09:13:36',39104]
-,['09:09:13:41',39472]
-,['09:09:13:46',39808]
-,['09:09:13:51',40208]
-,['09:09:14:01',40480]
-,['09:09:14:12',40400]
-,['09:09:14:17',40480]
-,['09:09:14:27',40656]
+,['09:34:55',34784]
+,['09:35:00',34752]
+,['09:35:10',34944]
 ]);
 var dataInstances = google.visualization.arrayToDataTable([
 ['Date', 'Instances']
-,['09:09:13:26',2368]
-,['09:09:13:31',2420]
-,['09:09:13:36',2444]
-,['09:09:13:41',2467]
-,['09:09:13:46',2488]
-,['09:09:13:51',2513]
-,['09:09:14:01',2530]
-,['09:09:14:12',2525]
-,['09:09:14:17',2530]
-,['09:09:14:27',2541]
+,['09:34:55',1087]
+,['09:35:00',1086]
+,['09:35:10',1092]
 ]);
 var optionsBytes = {
  title: 'Bytes allocated',

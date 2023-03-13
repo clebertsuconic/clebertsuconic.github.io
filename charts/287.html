@@ -10,23 +10,21 @@ $("#histogram").DataTable();
 } );
 </script>
 <body>
-<h1>Allocations for java.lang.ThreadLocal$ThreadLocalMap$Entry (java.base@11.0.8)</h2>
+<h1>Allocations for org.apache.activemq.artemis.utils.actors.OrderedExecutor</h2>
 <div id="bytesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <div id="instancesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <table id="histogram" class="display">
-<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th></tr></thead>
+<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th><th>links</th></tr></thead>
 <tbody>
-<tr><td>'09:09:13:26'</td><td>1792</td><td>56</td></tr>
-<tr><td>'09:09:13:31'</td><td>2368</td><td>74</td></tr>
-<tr><td>'09:09:13:36'</td><td>2624</td><td>82</td></tr>
-<tr><td>'09:09:13:41'</td><td>2752</td><td>86</td></tr>
-<tr><td>'09:09:13:46'</td><td>2944</td><td>92</td></tr>
-<tr><td>'09:09:13:51'</td><td>3136</td><td>98</td></tr>
-<tr><td>'09:09:14:01'</td><td>5536</td><td>173</td></tr>
-<tr><td>'09:09:14:06'</td><td>5920</td><td>185</td></tr>
-<tr><td>'09:09:14:12'</td><td>6272</td><td>196</td></tr>
-<tr><td>'09:09:14:17'</td><td>6560</td><td>205</td></tr>
-<tr><td>'09:09:14:27'</td><td>6752</td><td>211</td></tr>
+<tr><td>2023/03/13 09:34:55:210</td><td>1560</td><td>39</td><td>  <a href='../logs/GC_histogram_20230313093455210.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093455210.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093455210.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:10:744</td><td>1960</td><td>49</td><td>  <a href='../logs/GC_histogram_20230313093510744.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093510744.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093510744.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:16:079</td><td>1720</td><td>43</td><td>  <a href='../logs/GC_histogram_20230313093516079.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093516079.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093516079.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:21:178</td><td>1760</td><td>44</td><td>  <a href='../logs/GC_histogram_20230313093521178.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093521178.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093521178.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:26:248</td><td>1800</td><td>45</td><td>  <a href='../logs/GC_histogram_20230313093526248.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093526248.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093526248.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:31:330</td><td>1720</td><td>43</td><td>  <a href='../logs/GC_histogram_20230313093531330.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093531330.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093531330.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:36:409</td><td>2000</td><td>50</td><td>  <a href='../logs/GC_histogram_20230313093536409.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093536409.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093536409.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:42:284</td><td>1720</td><td>43</td><td>  <a href='../logs/GC_histogram_20230313093542284.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093542284.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093542284.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:47:365</td><td>2000</td><td>50</td><td>  <a href='../logs/GC_histogram_20230313093547365.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093547365.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093547365.html'>Analyzer</a></td></tr>
 </tbody></table>
 <script>
 google.charts.load('current', {'packages':['corechart']});
@@ -34,31 +32,27 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 var dataBytes = google.visualization.arrayToDataTable([
 ['Date', 'Bytes']
-,['09:09:13:26',1792]
-,['09:09:13:31',2368]
-,['09:09:13:36',2624]
-,['09:09:13:41',2752]
-,['09:09:13:46',2944]
-,['09:09:13:51',3136]
-,['09:09:14:01',5536]
-,['09:09:14:06',5920]
-,['09:09:14:12',6272]
-,['09:09:14:17',6560]
-,['09:09:14:27',6752]
+,['09:34:55',1560]
+,['09:35:10',1960]
+,['09:35:16',1720]
+,['09:35:21',1760]
+,['09:35:26',1800]
+,['09:35:31',1720]
+,['09:35:36',2000]
+,['09:35:42',1720]
+,['09:35:47',2000]
 ]);
 var dataInstances = google.visualization.arrayToDataTable([
 ['Date', 'Instances']
-,['09:09:13:26',56]
-,['09:09:13:31',74]
-,['09:09:13:36',82]
-,['09:09:13:41',86]
-,['09:09:13:46',92]
-,['09:09:13:51',98]
-,['09:09:14:01',173]
-,['09:09:14:06',185]
-,['09:09:14:12',196]
-,['09:09:14:17',205]
-,['09:09:14:27',211]
+,['09:34:55',39]
+,['09:35:10',49]
+,['09:35:16',43]
+,['09:35:21',44]
+,['09:35:26',45]
+,['09:35:31',43]
+,['09:35:36',50]
+,['09:35:42',43]
+,['09:35:47',50]
 ]);
 var optionsBytes = {
  title: 'Bytes allocated',

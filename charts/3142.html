@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<link type="text/css" charset="utf8" rel="stylesheet" href="../styles/jquery.dataTables.min.css">
+<script type="text/javascript" charset="utf8" src="../styles/jquery.min.js"></script>
+<script type="text/javascript" charset="utf8" src="../styles/jquery.dataTables.min.js"></script>
+<script type="text/javascript" class="init">
+$(document).ready( function () {
+$("#histogram").DataTable();
+} );
+</script>
+<body>
+<h1>Allocations for org.apache.activemq.artemis.api.core.ActiveMQExceptionType$36</h2>
+<div id="bytesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
+<div id="instancesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
+<table id="histogram" class="display">
+<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th><th>links</th></tr></thead>
+<tbody>
+<tr><td>2023/03/13 09:35:10:744</td><td>24</td><td>1</td><td>  <a href='../logs/GC_histogram_20230313093510744.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093510744.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093510744.html'>Analyzer</a></td></tr>
+</tbody></table>
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+var dataBytes = google.visualization.arrayToDataTable([
+['Date', 'Bytes']
+,['09:35:10',24]
+]);
+var dataInstances = google.visualization.arrayToDataTable([
+['Date', 'Instances']
+,['09:35:10',1]
+]);
+var optionsBytes = {
+ title: 'Bytes allocated',
+ hAxis: {title: 'Time'},
+ vAxis: {title: 'Bytes'},
+ legend: 'none'
+};
+var optionsInstances = {
+ title: 'Instances allocated',
+ hAxis: {title: 'Time'},
+ vAxis: {title: 'Instances'},
+ legend: 'none'
+};
+var chart = new google.visualization.LineChart(document.getElementById('bytesChart'));
+chart.draw(dataBytes, optionsBytes);
+var chart2 = new google.visualization.LineChart(document.getElementById('instancesChart'));
+chart2.draw(dataInstances, optionsInstances);
+}
+</script>
+</body>
+</html>

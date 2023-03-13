@@ -14,20 +14,19 @@ $("#histogram").DataTable();
 <div id="bytesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <div id="instancesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <table id="histogram" class="display">
-<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th></tr></thead>
+<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th><th>links</th></tr></thead>
 <tbody>
-<tr><td>'09:09:13:21'</td><td>1166016</td><td>48584</td></tr>
-<tr><td>'09:09:13:26'</td><td>1169184</td><td>48716</td></tr>
-<tr><td>'09:09:13:31'</td><td>1171296</td><td>48804</td></tr>
-<tr><td>'09:09:13:36'</td><td>1171824</td><td>48826</td></tr>
-<tr><td>'09:09:13:41'</td><td>1172976</td><td>48874</td></tr>
-<tr><td>'09:09:13:46'</td><td>1174248</td><td>48927</td></tr>
-<tr><td>'09:09:13:51'</td><td>1175400</td><td>48975</td></tr>
-<tr><td>'09:09:14:01'</td><td>1179504</td><td>49146</td></tr>
-<tr><td>'09:09:14:06'</td><td>1180056</td><td>49169</td></tr>
-<tr><td>'09:09:14:12'</td><td>1180464</td><td>49186</td></tr>
-<tr><td>'09:09:14:17'</td><td>1184544</td><td>49356</td></tr>
-<tr><td>'09:09:14:27'</td><td>1186320</td><td>49430</td></tr>
+<tr><td>2023/03/13 09:34:55:210</td><td>1027272</td><td>42803</td><td>  <a href='../logs/GC_histogram_20230313093455210.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093455210.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093455210.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:00:557</td><td>1023744</td><td>42656</td><td>  <a href='../logs/GC_histogram_20230313093500557.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093500557.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093500557.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:05:653</td><td>1023792</td><td>42658</td><td>  <a href='../logs/GC_histogram_20230313093505653.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093505653.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093505653.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:10:744</td><td>1182120</td><td>49255</td><td>  <a href='../logs/GC_histogram_20230313093510744.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093510744.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093510744.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:16:079</td><td>1204128</td><td>50172</td><td>  <a href='../logs/GC_histogram_20230313093516079.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093516079.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093516079.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:21:178</td><td>1259376</td><td>52474</td><td>  <a href='../logs/GC_histogram_20230313093521178.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093521178.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093521178.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:26:248</td><td>1310016</td><td>54584</td><td>  <a href='../logs/GC_histogram_20230313093526248.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093526248.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093526248.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:31:330</td><td>1320360</td><td>55015</td><td>  <a href='../logs/GC_histogram_20230313093531330.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093531330.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093531330.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:36:409</td><td>1359384</td><td>56641</td><td>  <a href='../logs/GC_histogram_20230313093536409.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093536409.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093536409.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:42:284</td><td>1342272</td><td>55928</td><td>  <a href='../logs/GC_histogram_20230313093542284.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093542284.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093542284.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:47:365</td><td>1248912</td><td>52038</td><td>  <a href='../logs/GC_histogram_20230313093547365.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093547365.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093547365.html'>Analyzer</a></td></tr>
 </tbody></table>
 <script>
 google.charts.load('current', {'packages':['corechart']});
@@ -35,33 +34,31 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 var dataBytes = google.visualization.arrayToDataTable([
 ['Date', 'Bytes']
-,['09:09:13:21',1166016]
-,['09:09:13:26',1169184]
-,['09:09:13:31',1171296]
-,['09:09:13:36',1171824]
-,['09:09:13:41',1172976]
-,['09:09:13:46',1174248]
-,['09:09:13:51',1175400]
-,['09:09:14:01',1179504]
-,['09:09:14:06',1180056]
-,['09:09:14:12',1180464]
-,['09:09:14:17',1184544]
-,['09:09:14:27',1186320]
+,['09:34:55',1027272]
+,['09:35:00',1023744]
+,['09:35:05',1023792]
+,['09:35:10',1182120]
+,['09:35:16',1204128]
+,['09:35:21',1259376]
+,['09:35:26',1310016]
+,['09:35:31',1320360]
+,['09:35:36',1359384]
+,['09:35:42',1342272]
+,['09:35:47',1248912]
 ]);
 var dataInstances = google.visualization.arrayToDataTable([
 ['Date', 'Instances']
-,['09:09:13:21',48584]
-,['09:09:13:26',48716]
-,['09:09:13:31',48804]
-,['09:09:13:36',48826]
-,['09:09:13:41',48874]
-,['09:09:13:46',48927]
-,['09:09:13:51',48975]
-,['09:09:14:01',49146]
-,['09:09:14:06',49169]
-,['09:09:14:12',49186]
-,['09:09:14:17',49356]
-,['09:09:14:27',49430]
+,['09:34:55',42803]
+,['09:35:00',42656]
+,['09:35:05',42658]
+,['09:35:10',49255]
+,['09:35:16',50172]
+,['09:35:21',52474]
+,['09:35:26',54584]
+,['09:35:31',55015]
+,['09:35:36',56641]
+,['09:35:42',55928]
+,['09:35:47',52038]
 ]);
 var optionsBytes = {
  title: 'Bytes allocated',

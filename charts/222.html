@@ -10,16 +10,18 @@ $("#histogram").DataTable();
 } );
 </script>
 <body>
-<h1>Allocations for io.netty.util.collection.IntObjectHashMap$1</h2>
+<h1>Allocations for java.util.concurrent.atomic.AtomicInteger (java.base@11.0.8)</h2>
 <div id="bytesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <div id="instancesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <table id="histogram" class="display">
-<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th></tr></thead>
+<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th><th>links</th></tr></thead>
 <tbody>
-<tr><td>'09:09:13:31'</td><td>2912</td><td>182</td></tr>
-<tr><td>'09:09:13:36'</td><td>2880</td><td>180</td></tr>
-<tr><td>'09:09:14:01'</td><td>2912</td><td>182</td></tr>
-<tr><td>'09:09:14:12'</td><td>2880</td><td>180</td></tr>
+<tr><td>2023/03/13 09:34:55:210</td><td>2800</td><td>175</td><td>  <a href='../logs/GC_histogram_20230313093455210.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093455210.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093455210.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:10:744</td><td>2816</td><td>176</td><td>  <a href='../logs/GC_histogram_20230313093510744.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093510744.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093510744.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:16:079</td><td>2800</td><td>175</td><td>  <a href='../logs/GC_histogram_20230313093516079.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093516079.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093516079.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:36:409</td><td>3040</td><td>190</td><td>  <a href='../logs/GC_histogram_20230313093536409.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093536409.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093536409.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:42:284</td><td>2800</td><td>175</td><td>  <a href='../logs/GC_histogram_20230313093542284.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093542284.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093542284.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:47:365</td><td>3008</td><td>188</td><td>  <a href='../logs/GC_histogram_20230313093547365.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093547365.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093547365.html'>Analyzer</a></td></tr>
 </tbody></table>
 <script>
 google.charts.load('current', {'packages':['corechart']});
@@ -27,17 +29,21 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 var dataBytes = google.visualization.arrayToDataTable([
 ['Date', 'Bytes']
-,['09:09:13:31',2912]
-,['09:09:13:36',2880]
-,['09:09:14:01',2912]
-,['09:09:14:12',2880]
+,['09:34:55',2800]
+,['09:35:10',2816]
+,['09:35:16',2800]
+,['09:35:36',3040]
+,['09:35:42',2800]
+,['09:35:47',3008]
 ]);
 var dataInstances = google.visualization.arrayToDataTable([
 ['Date', 'Instances']
-,['09:09:13:31',182]
-,['09:09:13:36',180]
-,['09:09:14:01',182]
-,['09:09:14:12',180]
+,['09:34:55',175]
+,['09:35:10',176]
+,['09:35:16',175]
+,['09:35:36',190]
+,['09:35:42',175]
+,['09:35:47',188]
 ]);
 var optionsBytes = {
  title: 'Bytes allocated',

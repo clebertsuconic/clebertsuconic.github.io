@@ -10,18 +10,15 @@ $("#histogram").DataTable();
 } );
 </script>
 <body>
-<h1>Allocations for io.netty.util.internal.LongAdderCounter</h2>
+<h1>Allocations for java.lang.Class$AnnotationData (java.base@11.0.8)</h2>
 <div id="bytesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <div id="instancesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <table id="histogram" class="display">
-<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th></tr></thead>
+<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th><th>links</th></tr></thead>
 <tbody>
-<tr><td>'09:09:13:26'</td><td>6528</td><td>204</td></tr>
-<tr><td>'09:09:13:31'</td><td>6688</td><td>209</td></tr>
-<tr><td>'09:09:13:36'</td><td>6784</td><td>212</td></tr>
-<tr><td>'09:09:13:41'</td><td>6848</td><td>214</td></tr>
-<tr><td>'09:09:13:46'</td><td>6912</td><td>216</td></tr>
-<tr><td>'09:09:13:51'</td><td>6976</td><td>218</td></tr>
+<tr><td>2023/03/13 09:34:55:210</td><td>6120</td><td>255</td><td>  <a href='../logs/GC_histogram_20230313093455210.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093455210.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093455210.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:10:744</td><td>6264</td><td>261</td><td>  <a href='../logs/GC_histogram_20230313093510744.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093510744.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093510744.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:31:330</td><td>6312</td><td>263</td><td>  <a href='../logs/GC_histogram_20230313093531330.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093531330.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093531330.html'>Analyzer</a></td></tr>
 </tbody></table>
 <script>
 google.charts.load('current', {'packages':['corechart']});
@@ -29,21 +26,15 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 var dataBytes = google.visualization.arrayToDataTable([
 ['Date', 'Bytes']
-,['09:09:13:26',6528]
-,['09:09:13:31',6688]
-,['09:09:13:36',6784]
-,['09:09:13:41',6848]
-,['09:09:13:46',6912]
-,['09:09:13:51',6976]
+,['09:34:55',6120]
+,['09:35:10',6264]
+,['09:35:31',6312]
 ]);
 var dataInstances = google.visualization.arrayToDataTable([
 ['Date', 'Instances']
-,['09:09:13:26',204]
-,['09:09:13:31',209]
-,['09:09:13:36',212]
-,['09:09:13:41',214]
-,['09:09:13:46',216]
-,['09:09:13:51',218]
+,['09:34:55',255]
+,['09:35:10',261]
+,['09:35:31',263]
 ]);
 var optionsBytes = {
  title: 'Bytes allocated',

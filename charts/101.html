@@ -10,22 +10,20 @@ $("#histogram").DataTable();
 } );
 </script>
 <body>
-<h1>Allocations for java.lang.ref.ReferenceQueue (java.base@11.0.8)</h2>
+<h1>Allocations for [Lio.netty.buffer.PoolSubpage;</h2>
 <div id="bytesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <div id="instancesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <table id="histogram" class="display">
-<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th></tr></thead>
+<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th><th>links</th></tr></thead>
 <tbody>
-<tr><td>'09:09:13:21'</td><td>8736</td><td>273</td></tr>
-<tr><td>'09:09:13:26'</td><td>8928</td><td>279</td></tr>
-<tr><td>'09:09:13:31'</td><td>9312</td><td>291</td></tr>
-<tr><td>'09:09:13:36'</td><td>9504</td><td>297</td></tr>
-<tr><td>'09:09:13:41'</td><td>9696</td><td>303</td></tr>
-<tr><td>'09:09:13:46'</td><td>9888</td><td>309</td></tr>
-<tr><td>'09:09:13:51'</td><td>10080</td><td>315</td></tr>
-<tr><td>'09:09:14:01'</td><td>10272</td><td>321</td></tr>
-<tr><td>'09:09:14:17'</td><td>10464</td><td>327</td></tr>
-<tr><td>'09:09:14:27'</td><td>10656</td><td>333</td></tr>
+<tr><td>2023/03/13 09:34:55:210</td><td>8448</td><td>48</td><td>  <a href='../logs/GC_histogram_20230313093455210.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093455210.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093455210.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:10:744</td><td>12576</td><td>50</td><td>  <a href='../logs/GC_histogram_20230313093510744.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093510744.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093510744.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:21:178</td><td>16704</td><td>52</td><td>  <a href='../logs/GC_histogram_20230313093521178.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093521178.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093521178.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:26:248</td><td>20832</td><td>54</td><td>  <a href='../logs/GC_histogram_20230313093526248.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093526248.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093526248.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:31:330</td><td>31152</td><td>59</td><td>  <a href='../logs/GC_histogram_20230313093531330.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093531330.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093531330.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:36:409</td><td>35280</td><td>61</td><td>  <a href='../logs/GC_histogram_20230313093536409.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093536409.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093536409.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:42:284</td><td>41472</td><td>64</td><td>  <a href='../logs/GC_histogram_20230313093542284.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093542284.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093542284.html'>Analyzer</a></td></tr>
+<tr><td>2023/03/13 09:35:47:365</td><td>57984</td><td>72</td><td>  <a href='../logs/GC_histogram_20230313093547365.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093547365.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093547365.html'>Analyzer</a></td></tr>
 </tbody></table>
 <script>
 google.charts.load('current', {'packages':['corechart']});
@@ -33,29 +31,25 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 var dataBytes = google.visualization.arrayToDataTable([
 ['Date', 'Bytes']
-,['09:09:13:21',8736]
-,['09:09:13:26',8928]
-,['09:09:13:31',9312]
-,['09:09:13:36',9504]
-,['09:09:13:41',9696]
-,['09:09:13:46',9888]
-,['09:09:13:51',10080]
-,['09:09:14:01',10272]
-,['09:09:14:17',10464]
-,['09:09:14:27',10656]
+,['09:34:55',8448]
+,['09:35:10',12576]
+,['09:35:21',16704]
+,['09:35:26',20832]
+,['09:35:31',31152]
+,['09:35:36',35280]
+,['09:35:42',41472]
+,['09:35:47',57984]
 ]);
 var dataInstances = google.visualization.arrayToDataTable([
 ['Date', 'Instances']
-,['09:09:13:21',273]
-,['09:09:13:26',279]
-,['09:09:13:31',291]
-,['09:09:13:36',297]
-,['09:09:13:41',303]
-,['09:09:13:46',309]
-,['09:09:13:51',315]
-,['09:09:14:01',321]
-,['09:09:14:17',327]
-,['09:09:14:27',333]
+,['09:34:55',48]
+,['09:35:10',50]
+,['09:35:21',52]
+,['09:35:26',54]
+,['09:35:31',59]
+,['09:35:36',61]
+,['09:35:42',64]
+,['09:35:47',72]
 ]);
 var optionsBytes = {
  title: 'Bytes allocated',

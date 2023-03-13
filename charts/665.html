@@ -10,21 +10,13 @@ $("#histogram").DataTable();
 } );
 </script>
 <body>
-<h1>Allocations for io.netty.channel.AbstractChannelHandlerContext$WriteTask</h2>
+<h1>Allocations for org.apache.logging.log4j.core.util.datetime.FixedDateFormat</h2>
 <div id="bytesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <div id="instancesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <table id="histogram" class="display">
-<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th></tr></thead>
+<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th><th>links</th></tr></thead>
 <tbody>
-<tr><td>'09:09:13:26'</td><td>288</td><td>9</td></tr>
-<tr><td>'09:09:13:31'</td><td>1184</td><td>37</td></tr>
-<tr><td>'09:09:13:36'</td><td>1216</td><td>38</td></tr>
-<tr><td>'09:09:13:46'</td><td>4608</td><td>144</td></tr>
-<tr><td>'09:09:13:51'</td><td>8064</td><td>252</td></tr>
-<tr><td>'09:09:14:01'</td><td>8608</td><td>269</td></tr>
-<tr><td>'09:09:14:06'</td><td>8672</td><td>271</td></tr>
-<tr><td>'09:09:14:12'</td><td>8736</td><td>273</td></tr>
-<tr><td>'09:09:14:27'</td><td>28192</td><td>881</td></tr>
+<tr><td>2023/03/13 09:34:55:210</td><td>240</td><td>3</td><td>  <a href='../logs/GC_histogram_20230313093455210.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093455210.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093455210.html'>Analyzer</a></td></tr>
 </tbody></table>
 <script>
 google.charts.load('current', {'packages':['corechart']});
@@ -32,27 +24,11 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 var dataBytes = google.visualization.arrayToDataTable([
 ['Date', 'Bytes']
-,['09:09:13:26',288]
-,['09:09:13:31',1184]
-,['09:09:13:36',1216]
-,['09:09:13:46',4608]
-,['09:09:13:51',8064]
-,['09:09:14:01',8608]
-,['09:09:14:06',8672]
-,['09:09:14:12',8736]
-,['09:09:14:27',28192]
+,['09:34:55',240]
 ]);
 var dataInstances = google.visualization.arrayToDataTable([
 ['Date', 'Instances']
-,['09:09:13:26',9]
-,['09:09:13:31',37]
-,['09:09:13:36',38]
-,['09:09:13:46',144]
-,['09:09:13:51',252]
-,['09:09:14:01',269]
-,['09:09:14:06',271]
-,['09:09:14:12',273]
-,['09:09:14:27',881]
+,['09:34:55',3]
 ]);
 var optionsBytes = {
  title: 'Bytes allocated',

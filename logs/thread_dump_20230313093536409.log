@@ -1,0 +1,816 @@
+2023-03-13 09:35:36
+Full thread dump OpenJDK 64-Bit Server VM (11.0.8+10 mixed mode):
+
+Threads class SMR info:
+_java_thread_list=0x0000600003ae8b00, length=63, elements={
+0x00007fc6c3034800, 0x00007fc6c3039800, 0x00007fc6c400a800, 0x00007fc6c400d800,
+0x00007fc6bf829000, 0x00007fc6c103c000, 0x00007fc6c400e000, 0x00007fc6c3035000,
+0x00007fc6c0d33800, 0x00007fc6c0e66800, 0x00007fc6c400f000, 0x00007fc6c39ca800,
+0x00007fc6c0eb5800, 0x00007fc6c0de8800, 0x00007fc6c0f49800, 0x00007fc6c8073800,
+0x00007fc6c404e800, 0x00007fc6c810d800, 0x00007fc6c0de3800, 0x00007fc6c0e37800,
+0x00007fc6c8066000, 0x00007fc6c4066800, 0x00007fc6c11cb800, 0x00007fc6c0d67000,
+0x00007fc6c8131800, 0x00007fc6c3b0d000, 0x00007fc6bfa7c000, 0x00007fc6c34f1000,
+0x00007fc6c11f1800, 0x00007fc6c825e800, 0x00007fc6c826f800, 0x00007fc6c0d2f800,
+0x00007fc6c0db1800, 0x00007fc6c0ccd800, 0x00007fc6c34df800, 0x00007fc6ca7fd800,
+0x00007fc6bfda7800, 0x00007fc6c13b9000, 0x00007fc6c11c4800, 0x00007fc6ca7ff800,
+0x00007fc6ca0a8800, 0x00007fc6c4053000, 0x00007fc6cab54000, 0x00007fc6c0ec8000,
+0x00007fc6c8057000, 0x00007fc6ca354800, 0x00007fc6ca379000, 0x00007fc6ca43a000,
+0x00007fc6cab55000, 0x00007fc6bfc2f000, 0x00007fc6c3b0e000, 0x00007fc6bf88e000,
+0x00007fc6c3a44800, 0x00007fc6c3a4c000, 0x00007fc6c5025000, 0x00007fc6ca33a000,
+0x00007fc6c828f800, 0x00007fc6c4017000, 0x00007fc6c401a000, 0x00007fc6ca408000,
+0x00007fc6ca8a3800, 0x00007fc6c580a000, 0x00007fc6c423b800
+}
+
+"Reference Handler" #2 daemon prio=10 os_prio=31 cpu=2.12ms elapsed=93.11s tid=0x00007fc6c3034800 nid=0x4403 waiting on condition  [0x00007000019f5000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@11.0.8/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@11.0.8/Reference.java:241)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@11.0.8/Reference.java:213)
+
+"Finalizer" #3 daemon prio=8 os_prio=31 cpu=0.56ms elapsed=93.11s tid=0x00007fc6c3039800 nid=0x4603 in Object.wait()  [0x0000700001af8000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@11.0.8/Native Method)
+	- waiting on <0x000000078010a3f8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@11.0.8/ReferenceQueue.java:155)
+	- waiting to re-lock in wait() <0x000000078010a3f8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@11.0.8/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@11.0.8/Finalizer.java:170)
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=31 cpu=0.21ms elapsed=93.09s tid=0x00007fc6c400a800 nid=0x5703 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #5 daemon prio=9 os_prio=31 cpu=5983.89ms elapsed=93.09s tid=0x00007fc6c400d800 nid=0x5903 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C1 CompilerThread0" #8 daemon prio=9 os_prio=31 cpu=1685.52ms elapsed=93.09s tid=0x00007fc6bf829000 nid=0x7c03 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"Sweeper thread" #9 daemon prio=9 os_prio=31 cpu=41.65ms elapsed=93.09s tid=0x00007fc6c103c000 nid=0x5c03 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #10 daemon prio=9 os_prio=31 cpu=0.06ms elapsed=93.07s tid=0x00007fc6c400e000 nid=0x7a03 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" #11 daemon prio=8 os_prio=31 cpu=2.99ms elapsed=93.06s tid=0x00007fc6c3035000 nid=0x7803 in Object.wait()  [0x0000700002313000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@11.0.8/Native Method)
+	- waiting on <0x0000000780109ea0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@11.0.8/ReferenceQueue.java:155)
+	- waiting to re-lock in wait() <0x0000000780109ea0> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@11.0.8/CleanerImpl.java:148)
+	at java.lang.Thread.run(java.base@11.0.8/Thread.java:834)
+	at jdk.internal.misc.InnocuousThread.run(java.base@11.0.8/InnocuousThread.java:134)
+
+"Log4j2-TF-3-Scheduled-1" #13 daemon prio=5 os_prio=31 cpu=2.65ms elapsed=92.06s tid=0x00007fc6c0d33800 nid=0xa903 waiting on condition  [0x0000700002f37000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815db6f0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(java.base@11.0.8/LockSupport.java:194)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(java.base@11.0.8/AbstractQueuedSynchronizer.java:2081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:1177)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1054)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at java.lang.Thread.run(java.base@11.0.8/Thread.java:834)
+
+"Log4j2-TF-3-Scheduled-2" #14 daemon prio=5 os_prio=31 cpu=0.84ms elapsed=92.04s tid=0x00007fc6c0e66800 nid=0x8303 waiting on condition  [0x000070000303a000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815db6f0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(java.base@11.0.8/LockSupport.java:194)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(java.base@11.0.8/AbstractQueuedSynchronizer.java:2081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:1177)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1054)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at java.lang.Thread.run(java.base@11.0.8/Thread.java:834)
+
+"Log4j2-TF-3-Scheduled-3" #15 daemon prio=5 os_prio=31 cpu=4.95ms elapsed=92.04s tid=0x00007fc6c400f000 nid=0xa603 waiting on condition  [0x000070000313d000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815db6f0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:1182)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1054)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at java.lang.Thread.run(java.base@11.0.8/Thread.java:834)
+
+"ActiveMQ Artemis Server Shutdown Timer" #16 daemon prio=5 os_prio=31 cpu=20.07ms elapsed=91.95s tid=0x00007fc6c39ca800 nid=0x8603 in Object.wait()  [0x0000700003240000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@11.0.8/Native Method)
+	- waiting on <0x00000007815dbb40> (a java.util.TaskQueue)
+	at java.util.TimerThread.mainLoop(java.base@11.0.8/Timer.java:553)
+	- waiting to re-lock in wait() <0x00000007815dbb40> (a java.util.TaskQueue)
+	at java.util.TimerThread.run(java.base@11.0.8/Timer.java:506)
+
+"Thread-0 (-scheduled-threads)" #18 prio=5 os_prio=31 cpu=0.40ms elapsed=91.56s tid=0x00007fc6c0eb5800 nid=0xa303 waiting on condition  [0x0000700003343000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815f2068> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:1182)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1054)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"activemq-buffer-timeout" #19 prio=5 os_prio=31 cpu=49.68ms elapsed=91.35s tid=0x00007fc6c0de8800 nid=0x8a03 runnable  [0x0000700003446000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.FileDispatcherImpl.force0(java.base@11.0.8/Native Method)
+	at sun.nio.ch.FileDispatcherImpl.force(java.base@11.0.8/FileDispatcherImpl.java:82)
+	at sun.nio.ch.FileChannelImpl.force(java.base@11.0.8/FileChannelImpl.java:461)
+	at org.apache.activemq.artemis.core.io.nio.NIOSequentialFile.sync(NIOSequentialFile.java:322)
+	at org.apache.activemq.artemis.core.io.nio.NIOSequentialFile.doInternalWrite(NIOSequentialFile.java:438)
+	at org.apache.activemq.artemis.core.io.nio.NIOSequentialFile.internalWrite(NIOSequentialFile.java:406)
+	at org.apache.activemq.artemis.core.io.nio.NIOSequentialFile$SyncLocalBufferObserver.flushBuffer(NIOSequentialFile.java:480)
+	at org.apache.activemq.artemis.core.io.buffer.TimedBuffer.flushBatch(TimedBuffer.java:326)
+	- locked <0x00000007815ca5a8> (a org.apache.activemq.artemis.core.io.buffer.TimedBuffer)
+	at org.apache.activemq.artemis.core.io.buffer.TimedBuffer$CheckTimer.run(TimedBuffer.java:448)
+	at java.lang.Thread.run(java.base@11.0.8/Thread.java:834)
+
+"Thread-0 (ActiveMQ-scheduled-threads)" #20 prio=5 os_prio=31 cpu=19.42ms elapsed=91.35s tid=0x00007fc6c0f49800 nid=0x8d03 waiting on condition  [0x0000700003549000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815dbd88> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(java.base@11.0.8/LockSupport.java:194)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(java.base@11.0.8/AbstractQueuedSynchronizer.java:2081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:1177)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1054)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-1 (ActiveMQ-scheduled-threads)" #21 prio=5 os_prio=31 cpu=21.23ms elapsed=91.35s tid=0x00007fc6c8073800 nid=0xa103 waiting on condition  [0x000070000364c000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815dbd88> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:1182)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1054)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-2 (ActiveMQ-scheduled-threads)" #22 prio=5 os_prio=31 cpu=16.90ms elapsed=91.35s tid=0x00007fc6c404e800 nid=0xa003 waiting on condition  [0x000070000374f000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815dbd88> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(java.base@11.0.8/LockSupport.java:194)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(java.base@11.0.8/AbstractQueuedSynchronizer.java:2081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:1177)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1054)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-3 (ActiveMQ-scheduled-threads)" #32 prio=5 os_prio=31 cpu=17.58ms elapsed=90.35s tid=0x00007fc6c810d800 nid=0xfd07 waiting on condition  [0x0000700003955000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815dbd88> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(java.base@11.0.8/LockSupport.java:194)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(java.base@11.0.8/AbstractQueuedSynchronizer.java:2081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:1177)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1054)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-0 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$6@566d0c69)" #33 prio=5 os_prio=31 cpu=125.18ms elapsed=90.21s tid=0x00007fc6c0de3800 nid=0x9d07 waiting on condition  [0x0000700003a58000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815f26a0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.LinkedBlockingQueue.poll(java.base@11.0.8/LinkedBlockingQueue.java:458)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:112)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1053)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-1 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$6@566d0c69)" #34 prio=5 os_prio=31 cpu=127.00ms elapsed=90.21s tid=0x00007fc6c0e37800 nid=0x9907 waiting on condition  [0x0000700003b5b000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815f26a0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.LinkedBlockingQueue.poll(java.base@11.0.8/LinkedBlockingQueue.java:458)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:112)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1053)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-2 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$6@566d0c69)" #35 prio=5 os_prio=31 cpu=232.42ms elapsed=90.21s tid=0x00007fc6c8066000 nid=0xaa07 waiting on condition  [0x0000700003c5e000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815f26a0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.LinkedBlockingQueue.poll(java.base@11.0.8/LinkedBlockingQueue.java:458)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:112)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1053)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-1 (ActiveMQ-PageExecutor-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$9@f8f56b9)" #38 prio=5 os_prio=31 cpu=0.85ms elapsed=90.19s tid=0x00007fc6c4066800 nid=0xf907 waiting on condition  [0x0000700003f67000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815f2830> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.LinkedBlockingQueue.poll(java.base@11.0.8/LinkedBlockingQueue.java:458)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:112)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1053)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"activemq-failure-check-thread" #42 prio=5 os_prio=31 cpu=4.34ms elapsed=89.85s tid=0x00007fc6c11cb800 nid=0xb303 waiting on condition  [0x0000700004373000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x0000000780b4f228> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:1079)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.tryAcquireSharedNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:1369)
+	at java.util.concurrent.CountDownLatch.await(java.base@11.0.8/CountDownLatch.java:278)
+	at org.apache.activemq.artemis.core.remoting.server.impl.RemotingServiceImpl$FailureCheckAndFlushThread.run(RemotingServiceImpl.java:788)
+
+"Thread-4 (ActiveMQ-scheduled-threads)" #43 prio=5 os_prio=31 cpu=17.79ms elapsed=89.85s tid=0x00007fc6c0d67000 nid=0xb603 waiting on condition  [0x0000700004476000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815dbd88> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(java.base@11.0.8/LockSupport.java:194)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(java.base@11.0.8/AbstractQueuedSynchronizer.java:2081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:1177)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1054)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-0 (activemq-netty-threads)" #44 daemon prio=5 os_prio=31 cpu=18.72ms elapsed=89.61s tid=0x00007fc6c8131800 nid=0xb903 runnable  [0x0000700004579000]
+   java.lang.Thread.State: RUNNABLE
+	at io.netty.channel.kqueue.Native.keventWait(Native Method)
+	at io.netty.channel.kqueue.Native.keventWait(Native.java:124)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:179)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:171)
+	at io.netty.channel.kqueue.KQueueEventLoop.run(KQueueEventLoop.java:240)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-0 (activemq-netty-threads)" #45 daemon prio=5 os_prio=31 cpu=5.36ms elapsed=89.60s tid=0x00007fc6c3b0d000 nid=0xf303 runnable  [0x000070000467c000]
+   java.lang.Thread.State: RUNNABLE
+	at io.netty.channel.kqueue.Native.keventWait(Native Method)
+	at io.netty.channel.kqueue.Native.keventWait(Native.java:124)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:179)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:171)
+	at io.netty.channel.kqueue.KQueueEventLoop.run(KQueueEventLoop.java:240)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-0 (activemq-netty-threads)" #46 daemon prio=5 os_prio=31 cpu=5.42ms elapsed=89.59s tid=0x00007fc6bfa7c000 nid=0xbc03 runnable  [0x000070000477f000]
+   java.lang.Thread.State: RUNNABLE
+	at io.netty.channel.kqueue.Native.keventWait(Native Method)
+	at io.netty.channel.kqueue.Native.keventWait(Native.java:124)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:179)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:171)
+	at io.netty.channel.kqueue.KQueueEventLoop.run(KQueueEventLoop.java:240)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-0 (activemq-netty-threads)" #47 daemon prio=5 os_prio=31 cpu=5.85ms elapsed=89.58s tid=0x00007fc6c34f1000 nid=0xf003 runnable  [0x0000700004882000]
+   java.lang.Thread.State: RUNNABLE
+	at io.netty.channel.kqueue.Native.keventWait(Native Method)
+	at io.netty.channel.kqueue.Native.keventWait(Native.java:124)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:179)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:171)
+	at io.netty.channel.kqueue.KQueueEventLoop.run(KQueueEventLoop.java:240)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-0 (activemq-netty-threads)" #48 daemon prio=5 os_prio=31 cpu=5.53ms elapsed=89.58s tid=0x00007fc6c11f1800 nid=0xbf03 runnable  [0x0000700004985000]
+   java.lang.Thread.State: RUNNABLE
+	at io.netty.channel.kqueue.Native.keventWait(Native Method)
+	at io.netty.channel.kqueue.Native.keventWait(Native.java:124)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:179)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:171)
+	at io.netty.channel.kqueue.KQueueEventLoop.run(KQueueEventLoop.java:240)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"qtp98459285-49" #49 prio=5 os_prio=31 cpu=2.09ms elapsed=88.90s tid=0x00007fc6c825e800 nid=0xc203 runnable  [0x0000700004a88000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@11.0.8/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@11.0.8/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@11.0.8/SelectorImpl.java:124)
+	- locked <0x00000007800fab00> (a sun.nio.ch.Util$2)
+	- locked <0x00000007800fa938> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@11.0.8/SelectorImpl.java:141)
+	at org.eclipse.jetty.io.ManagedSelector.nioSelect(ManagedSelector.java:180)
+	at org.eclipse.jetty.io.ManagedSelector.select(ManagedSelector.java:187)
+	at org.eclipse.jetty.io.ManagedSelector$SelectorProducer.select(ManagedSelector.java:604)
+	at org.eclipse.jetty.io.ManagedSelector$SelectorProducer.produce(ManagedSelector.java:541)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produceTask(AdaptiveExecutionStrategy.java:446)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:239)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:190)
+	at org.eclipse.jetty.io.ManagedSelector$$Lambda$382/0x000000080055e440.run(Unknown Source)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.lang.Thread.run(java.base@11.0.8/Thread.java:834)
+
+"qtp98459285-50" #50 prio=5 os_prio=31 cpu=0.60ms elapsed=88.90s tid=0x00007fc6c826f800 nid=0xec03 runnable  [0x0000700004b8b000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@11.0.8/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@11.0.8/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@11.0.8/SelectorImpl.java:124)
+	- locked <0x00000007800fb540> (a sun.nio.ch.Util$2)
+	- locked <0x00000007800fb3e8> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@11.0.8/SelectorImpl.java:141)
+	at org.eclipse.jetty.io.ManagedSelector.nioSelect(ManagedSelector.java:180)
+	at org.eclipse.jetty.io.ManagedSelector.select(ManagedSelector.java:187)
+	at org.eclipse.jetty.io.ManagedSelector$SelectorProducer.select(ManagedSelector.java:604)
+	at org.eclipse.jetty.io.ManagedSelector$SelectorProducer.produce(ManagedSelector.java:541)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produceTask(AdaptiveExecutionStrategy.java:446)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:239)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:190)
+	at org.eclipse.jetty.io.ManagedSelector$$Lambda$382/0x000000080055e440.run(Unknown Source)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.lang.Thread.run(java.base@11.0.8/Thread.java:834)
+
+"qtp98459285-51" #51 prio=5 os_prio=31 cpu=0.60ms elapsed=88.90s tid=0x00007fc6c0d2f800 nid=0xc403 runnable  [0x0000700004c8e000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@11.0.8/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@11.0.8/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@11.0.8/SelectorImpl.java:124)
+	- locked <0x00000007800fb770> (a sun.nio.ch.Util$2)
+	- locked <0x00000007800fb618> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@11.0.8/SelectorImpl.java:141)
+	at org.eclipse.jetty.io.ManagedSelector.nioSelect(ManagedSelector.java:180)
+	at org.eclipse.jetty.io.ManagedSelector.select(ManagedSelector.java:187)
+	at org.eclipse.jetty.io.ManagedSelector$SelectorProducer.select(ManagedSelector.java:604)
+	at org.eclipse.jetty.io.ManagedSelector$SelectorProducer.produce(ManagedSelector.java:541)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produceTask(AdaptiveExecutionStrategy.java:446)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:239)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:190)
+	at org.eclipse.jetty.io.ManagedSelector$$Lambda$382/0x000000080055e440.run(Unknown Source)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.lang.Thread.run(java.base@11.0.8/Thread.java:834)
+
+"qtp98459285-52" #52 prio=5 os_prio=31 cpu=0.59ms elapsed=88.90s tid=0x00007fc6c0db1800 nid=0xc603 runnable  [0x0000700004d91000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@11.0.8/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@11.0.8/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@11.0.8/SelectorImpl.java:124)
+	- locked <0x00000007800fb9a0> (a sun.nio.ch.Util$2)
+	- locked <0x00000007800fb848> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@11.0.8/SelectorImpl.java:141)
+	at org.eclipse.jetty.io.ManagedSelector.nioSelect(ManagedSelector.java:180)
+	at org.eclipse.jetty.io.ManagedSelector.select(ManagedSelector.java:187)
+	at org.eclipse.jetty.io.ManagedSelector$SelectorProducer.select(ManagedSelector.java:604)
+	at org.eclipse.jetty.io.ManagedSelector$SelectorProducer.produce(ManagedSelector.java:541)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produceTask(AdaptiveExecutionStrategy.java:446)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:239)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:190)
+	at org.eclipse.jetty.io.ManagedSelector$$Lambda$382/0x000000080055e440.run(Unknown Source)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.lang.Thread.run(java.base@11.0.8/Thread.java:834)
+
+"qtp98459285-53" #53 prio=5 os_prio=31 cpu=0.18ms elapsed=88.90s tid=0x00007fc6c0ccd800 nid=0xc703 runnable  [0x0000700004e94000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@11.0.8/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@11.0.8/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@11.0.8/SelectorImpl.java:124)
+	- locked <0x00000007800fbbd0> (a sun.nio.ch.Util$2)
+	- locked <0x00000007800fba78> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@11.0.8/SelectorImpl.java:141)
+	at org.eclipse.jetty.io.ManagedSelector.nioSelect(ManagedSelector.java:180)
+	at org.eclipse.jetty.io.ManagedSelector.select(ManagedSelector.java:187)
+	at org.eclipse.jetty.io.ManagedSelector$SelectorProducer.select(ManagedSelector.java:604)
+	at org.eclipse.jetty.io.ManagedSelector$SelectorProducer.produce(ManagedSelector.java:541)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produceTask(AdaptiveExecutionStrategy.java:446)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:239)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:190)
+	at org.eclipse.jetty.io.ManagedSelector$$Lambda$382/0x000000080055e440.run(Unknown Source)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.lang.Thread.run(java.base@11.0.8/Thread.java:834)
+
+"qtp98459285-54" #54 prio=5 os_prio=31 cpu=0.16ms elapsed=88.90s tid=0x00007fc6c34df800 nid=0xc903 runnable  [0x0000700004f97000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@11.0.8/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@11.0.8/KQueueSelectorImpl.java:122)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@11.0.8/SelectorImpl.java:124)
+	- locked <0x00000007800fbe00> (a sun.nio.ch.Util$2)
+	- locked <0x00000007800fbca8> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@11.0.8/SelectorImpl.java:141)
+	at org.eclipse.jetty.io.ManagedSelector.nioSelect(ManagedSelector.java:180)
+	at org.eclipse.jetty.io.ManagedSelector.select(ManagedSelector.java:187)
+	at org.eclipse.jetty.io.ManagedSelector$SelectorProducer.select(ManagedSelector.java:604)
+	at org.eclipse.jetty.io.ManagedSelector$SelectorProducer.produce(ManagedSelector.java:541)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produceTask(AdaptiveExecutionStrategy.java:446)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:239)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:190)
+	at org.eclipse.jetty.io.ManagedSelector$$Lambda$382/0x000000080055e440.run(Unknown Source)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.lang.Thread.run(java.base@11.0.8/Thread.java:834)
+
+"qtp98459285-55-acceptor-0@558084d-Connector-0@d3f4505{HTTP/1.1, (http/1.1)}{localhost:8161}" #55 prio=3 os_prio=31 cpu=0.94ms elapsed=88.90s tid=0x00007fc6ca7fd800 nid=0xcc03 runnable  [0x000070000509a000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.ServerSocketChannelImpl.accept0(java.base@11.0.8/Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.accept(java.base@11.0.8/ServerSocketChannelImpl.java:533)
+	at sun.nio.ch.ServerSocketChannelImpl.accept(java.base@11.0.8/ServerSocketChannelImpl.java:285)
+	at org.eclipse.jetty.server.ServerConnector.accept(ServerConnector.java:409)
+	at org.eclipse.jetty.server.AbstractConnector$Acceptor.run(AbstractConnector.java:734)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.lang.Thread.run(java.base@11.0.8/Thread.java:834)
+
+"qtp98459285-56" #56 prio=5 os_prio=31 cpu=0.24ms elapsed=88.90s tid=0x00007fc6bfda7800 nid=0xce03 waiting on condition  [0x000070000519d000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007810844d8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at org.eclipse.jetty.util.BlockingArrayQueue.poll(BlockingArrayQueue.java:219)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.idleJobPoll(QueuedThreadPool.java:975)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1025)
+	at java.lang.Thread.run(java.base@11.0.8/Thread.java:834)
+
+"Session-HouseKeeper-4a50d04a-1" #57 prio=5 os_prio=31 cpu=0.14ms elapsed=88.75s tid=0x00007fc6c13b9000 nid=0xe403 waiting on condition  [0x00007000052a0000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x000000078103dcc8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:1182)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1054)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at java.lang.Thread.run(java.base@11.0.8/Thread.java:834)
+
+"DestroyJavaVM" #58 prio=5 os_prio=31 cpu=3548.76ms elapsed=88.21s tid=0x00007fc6c11c4800 nid=0x2703 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Log4j2-TF-3-Scheduled-4" #59 daemon prio=5 os_prio=31 cpu=0.80ms elapsed=87.04s tid=0x00007fc6ca7ff800 nid=0xe303 waiting on condition  [0x00007000053a3000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815db6f0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:1182)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@11.0.8/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1054)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at java.lang.Thread.run(java.base@11.0.8/Thread.java:834)
+
+"Attach Listener" #60 daemon prio=9 os_prio=31 cpu=52.17ms elapsed=41.77s tid=0x00007fc6ca0a8800 nid=0xd303 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Thread-1 (activemq-netty-threads)" #61 daemon prio=5 os_prio=31 cpu=141.91ms elapsed=26.64s tid=0x00007fc6c4053000 nid=0xae0b runnable  [0x0000700003852000]
+   java.lang.Thread.State: RUNNABLE
+	at io.netty.channel.kqueue.Native.keventWait(Native Method)
+	at io.netty.channel.kqueue.Native.keventWait(Native.java:124)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:179)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:171)
+	at io.netty.channel.kqueue.KQueueEventLoop.run(KQueueEventLoop.java:240)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-0 (ActiveMQ-remoting-threads-ActiveMQServerImpl::name=0.0.0.0-773300030)" #62 prio=5 os_prio=31 cpu=4.63ms elapsed=26.44s tid=0x00007fc6cab54000 nid=0x9207 waiting on condition  [0x0000700003d61000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x000000078142e6b0> (a java.util.concurrent.SynchronousQueue$TransferStack)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(java.base@11.0.8/SynchronousQueue.java:462)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(java.base@11.0.8/SynchronousQueue.java:361)
+	at java.util.concurrent.SynchronousQueue.poll(java.base@11.0.8/SynchronousQueue.java:937)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1053)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-2 (activemq-netty-threads)" #63 daemon prio=5 os_prio=31 cpu=166.63ms elapsed=26.43s tid=0x00007fc6c0ec8000 nid=0xf807 runnable  [0x0000700003e64000]
+   java.lang.Thread.State: RUNNABLE
+	at io.netty.channel.kqueue.Native.keventWait(Native Method)
+	at io.netty.channel.kqueue.Native.keventWait(Native.java:124)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:179)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:171)
+	at io.netty.channel.kqueue.KQueueEventLoop.run(KQueueEventLoop.java:240)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-2 (ActiveMQ-IO-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$8@2c16fadb)" #64 prio=5 os_prio=31 cpu=75.78ms elapsed=26.27s tid=0x00007fc6c8057000 nid=0xb007 waiting for monitor entry  [0x000070000406a000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at org.apache.activemq.artemis.core.io.buffer.TimedBuffer.checkSize(TimedBuffer.java:216)
+	- waiting to lock <0x00000007815ca5a8> (a org.apache.activemq.artemis.core.io.buffer.TimedBuffer)
+	at org.apache.activemq.artemis.core.io.AbstractSequentialFile.fits(AbstractSequentialFile.java:184)
+	at org.apache.activemq.artemis.core.journal.impl.JournalImpl.switchFileIfNecessary(JournalImpl.java:3493)
+	at org.apache.activemq.artemis.core.journal.impl.JournalImpl.appendRecord(JournalImpl.java:3226)
+	at org.apache.activemq.artemis.core.journal.impl.JournalImpl$8.run(JournalImpl.java:1516)
+	at org.apache.activemq.artemis.utils.actors.OrderedExecutor.doTask(OrderedExecutor.java:57)
+	at org.apache.activemq.artemis.utils.actors.OrderedExecutor.doTask(OrderedExecutor.java:32)
+	at org.apache.activemq.artemis.utils.actors.ProcessorBase.executePendingTasks(ProcessorBase.java:68)
+	at org.apache.activemq.artemis.utils.actors.ProcessorBase$$Lambda$179/0x000000080035ec40.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-3 (ActiveMQ-IO-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$8@2c16fadb)" #65 prio=5 os_prio=31 cpu=87.16ms elapsed=26.20s tid=0x00007fc6ca354800 nid=0xfb0b waiting on condition  [0x000070000416d000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815dc000> (a java.util.concurrent.SynchronousQueue$TransferStack)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(java.base@11.0.8/SynchronousQueue.java:462)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(java.base@11.0.8/SynchronousQueue.java:361)
+	at java.util.concurrent.SynchronousQueue.poll(java.base@11.0.8/SynchronousQueue.java:937)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1053)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-3 (activemq-netty-threads)" #67 daemon prio=5 os_prio=31 cpu=6.12ms elapsed=18.19s tid=0x00007fc6ca379000 nid=0xff0f runnable  [0x0000700004270000]
+   java.lang.Thread.State: RUNNABLE
+	at io.netty.channel.kqueue.Native.keventWait(Native Method)
+	at io.netty.channel.kqueue.Native.keventWait(Native.java:124)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:179)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:171)
+	at io.netty.channel.kqueue.KQueueEventLoop.run(KQueueEventLoop.java:240)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-4 (activemq-netty-threads)" #68 daemon prio=5 os_prio=31 cpu=270.49ms elapsed=18.13s tid=0x00007fc6ca43a000 nid=0xe103 runnable  [0x00007000055a9000]
+   java.lang.Thread.State: RUNNABLE
+	at io.netty.channel.kqueue.Native.keventWait(Native Method)
+	at io.netty.channel.kqueue.Native.keventWait(Native.java:124)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:179)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:171)
+	at io.netty.channel.kqueue.KQueueEventLoop.run(KQueueEventLoop.java:240)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-5 (activemq-netty-threads)" #69 daemon prio=5 os_prio=31 cpu=6.54ms elapsed=13.44s tid=0x00007fc6cab55000 nid=0xdf03 runnable  [0x00007000056ac000]
+   java.lang.Thread.State: RUNNABLE
+	at io.netty.channel.kqueue.Native.keventWait(Native Method)
+	at io.netty.channel.kqueue.Native.keventWait(Native.java:124)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:179)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:171)
+	at io.netty.channel.kqueue.KQueueEventLoop.run(KQueueEventLoop.java:240)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-6 (activemq-netty-threads)" #70 daemon prio=5 os_prio=31 cpu=172.66ms elapsed=13.37s tid=0x00007fc6bfc2f000 nid=0xdc03 runnable  [0x00007000057af000]
+   java.lang.Thread.State: RUNNABLE
+	at io.netty.channel.kqueue.Native.keventWait(Native Method)
+	at io.netty.channel.kqueue.Native.keventWait(Native.java:124)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:179)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:171)
+	at io.netty.channel.kqueue.KQueueEventLoop.run(KQueueEventLoop.java:240)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-7 (activemq-netty-threads)" #71 daemon prio=5 os_prio=31 cpu=22.00ms elapsed=9.38s tid=0x00007fc6c3b0e000 nid=0xda03 runnable  [0x00007000058b2000]
+   java.lang.Thread.State: RUNNABLE
+	at io.netty.channel.kqueue.Native.keventWait(Native Method)
+	at io.netty.channel.kqueue.Native.keventWait(Native.java:124)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:179)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:171)
+	at io.netty.channel.kqueue.KQueueEventLoop.run(KQueueEventLoop.java:240)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-8 (activemq-netty-threads)" #72 daemon prio=5 os_prio=31 cpu=10.44ms elapsed=9.28s tid=0x00007fc6bf88e000 nid=0xd703 runnable  [0x00007000059b5000]
+   java.lang.Thread.State: RUNNABLE
+	at io.netty.channel.kqueue.Native.keventWait(Native Method)
+	at io.netty.channel.kqueue.Native.keventWait(Native.java:124)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:179)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:171)
+	at io.netty.channel.kqueue.KQueueEventLoop.run(KQueueEventLoop.java:240)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-9 (activemq-netty-threads)" #73 daemon prio=5 os_prio=31 cpu=6.04ms elapsed=0.77s tid=0x00007fc6c3a44800 nid=0x15403 runnable  [0x0000700005ab8000]
+   java.lang.Thread.State: RUNNABLE
+	at io.netty.channel.kqueue.Native.keventWait(Native Method)
+	at io.netty.channel.kqueue.Native.keventWait(Native.java:124)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:179)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:171)
+	at io.netty.channel.kqueue.KQueueEventLoop.run(KQueueEventLoop.java:240)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-10 (activemq-netty-threads)" #74 daemon prio=5 os_prio=31 cpu=41.03ms elapsed=0.67s tid=0x00007fc6c3a4c000 nid=0x15103 runnable  [0x0000700005bbb000]
+   java.lang.Thread.State: RUNNABLE
+	at io.netty.channel.kqueue.Native.keventWait(Native Method)
+	at io.netty.channel.kqueue.Native.keventWait(Native.java:124)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:179)
+	at io.netty.channel.kqueue.KQueueEventLoop.kqueueWait(KQueueEventLoop.java:171)
+	at io.netty.channel.kqueue.KQueueEventLoop.run(KQueueEventLoop.java:240)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-3 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$6@566d0c69)" #75 prio=5 os_prio=31 cpu=1.81ms elapsed=0.55s tid=0x00007fc6c5025000 nid=0x10303 waiting on condition  [0x0000700005cbe000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815f26a0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.LinkedBlockingQueue.poll(java.base@11.0.8/LinkedBlockingQueue.java:458)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:112)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1053)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-4 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$6@566d0c69)" #76 prio=5 os_prio=31 cpu=2.06ms elapsed=0.53s tid=0x00007fc6ca33a000 nid=0x10503 waiting on condition  [0x0000700005dc1000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815f26a0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.LinkedBlockingQueue.poll(java.base@11.0.8/LinkedBlockingQueue.java:458)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:112)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1053)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-5 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$6@566d0c69)" #77 prio=5 os_prio=31 cpu=1.70ms elapsed=0.47s tid=0x00007fc6c828f800 nid=0x14c03 waiting on condition  [0x0000700005ec4000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815f26a0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.LinkedBlockingQueue.poll(java.base@11.0.8/LinkedBlockingQueue.java:458)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:112)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1053)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-6 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$6@566d0c69)" #78 prio=5 os_prio=31 cpu=0.85ms elapsed=0.38s tid=0x00007fc6c4017000 nid=0x14a03 waiting on condition  [0x0000700005fc7000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815f26a0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.LinkedBlockingQueue.poll(java.base@11.0.8/LinkedBlockingQueue.java:458)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:112)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1053)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-7 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$6@566d0c69)" #79 prio=5 os_prio=31 cpu=1.23ms elapsed=0.38s tid=0x00007fc6c401a000 nid=0x14803 waiting on condition  [0x00007000060ca000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815f26a0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.LinkedBlockingQueue.poll(java.base@11.0.8/LinkedBlockingQueue.java:458)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:112)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1053)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-8 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$6@566d0c69)" #80 prio=5 os_prio=31 cpu=0.91ms elapsed=0.17s tid=0x00007fc6ca408000 nid=0x10803 waiting on condition  [0x00007000061cd000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815f26a0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.LinkedBlockingQueue.poll(java.base@11.0.8/LinkedBlockingQueue.java:458)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:112)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1053)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-9 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$6@566d0c69)" #81 prio=5 os_prio=31 cpu=0.40ms elapsed=0.10s tid=0x00007fc6ca8a3800 nid=0x10903 waiting on condition  [0x00007000062d0000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815f26a0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.LinkedBlockingQueue.poll(java.base@11.0.8/LinkedBlockingQueue.java:458)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:112)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1053)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-10 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$6@566d0c69)" #82 prio=5 os_prio=31 cpu=0.24ms elapsed=0.04s tid=0x00007fc6c580a000 nid=0x14203 waiting on condition  [0x00007000063d3000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815f26a0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.LinkedBlockingQueue.poll(java.base@11.0.8/LinkedBlockingQueue.java:458)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:112)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1053)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"Thread-11 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$6@566d0c69)" #83 prio=5 os_prio=31 cpu=0.23ms elapsed=0.00s tid=0x00007fc6c423b800 nid=0x14003 waiting on condition  [0x00007000064d6000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@11.0.8/Native Method)
+	- parking to wait for  <0x00000007815f26a0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@11.0.8/LockSupport.java:234)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@11.0.8/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.LinkedBlockingQueue.poll(java.base@11.0.8/LinkedBlockingQueue.java:458)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:112)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadPoolExecutor$ThreadPoolQueue.poll(ActiveMQThreadPoolExecutor.java:45)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@11.0.8/ThreadPoolExecutor.java:1053)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.8/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.8/ThreadPoolExecutor.java:628)
+	at org.apache.activemq.artemis.utils.ActiveMQThreadFactory$1.run(ActiveMQThreadFactory.java:118)
+
+"VM Thread" os_prio=31 cpu=289.72ms elapsed=93.12s tid=0x00007fc6bf81e000 nid=0x4303 runnable  
+
+"GC Thread#0" os_prio=31 cpu=132.44ms elapsed=93.14s tid=0x00007fc6c081a800 nid=0x2f03 runnable  
+
+"GC Thread#1" os_prio=31 cpu=130.09ms elapsed=92.68s tid=0x00007fc6c11be000 nid=0x7603 runnable  
+
+"GC Thread#2" os_prio=31 cpu=136.37ms elapsed=92.68s tid=0x00007fc6c11c7800 nid=0x7503 runnable  
+
+"GC Thread#3" os_prio=31 cpu=129.56ms elapsed=92.68s tid=0x00007fc6c11c8800 nid=0x6403 runnable  
+
+"GC Thread#4" os_prio=31 cpu=136.71ms elapsed=92.68s tid=0x00007fc6c11c9000 nid=0x6603 runnable  
+
+"GC Thread#5" os_prio=31 cpu=139.26ms elapsed=92.68s tid=0x00007fc6c11ca000 nid=0x7303 runnable  
+
+"GC Thread#6" os_prio=31 cpu=130.59ms elapsed=92.68s tid=0x00007fc6c380a000 nid=0x6703 runnable  
+
+"GC Thread#7" os_prio=31 cpu=144.66ms elapsed=92.68s tid=0x00007fc6c39c9800 nid=0x6803 runnable  
+
+"GC Thread#8" os_prio=31 cpu=135.54ms elapsed=92.68s tid=0x00007fc6c0d4b800 nid=0x6903 runnable  
+
+"GC Thread#9" os_prio=31 cpu=134.77ms elapsed=92.68s tid=0x00007fc6c11ca800 nid=0x6e03 runnable  
+
+"G1 Main Marker" os_prio=31 cpu=0.84ms elapsed=93.14s tid=0x00007fc6c083b000 nid=0x3003 runnable  
+
+"G1 Conc#0" os_prio=31 cpu=13.29ms elapsed=93.14s tid=0x00007fc6c083c000 nid=0x3a03 runnable  
+
+"G1 Conc#1" os_prio=31 cpu=13.74ms elapsed=92.22s tid=0x00007fc6bfa7b000 nid=0x6a03 runnable  
+
+"G1 Conc#2" os_prio=31 cpu=12.50ms elapsed=92.22s tid=0x00007fc6c600b000 nid=0x6b03 runnable  
+
+"G1 Refine#0" os_prio=31 cpu=1.59ms elapsed=93.13s tid=0x00007fc6c0964800 nid=0x3903 runnable  
+
+"G1 Young RemSet Sampling" os_prio=31 cpu=18.13ms elapsed=93.13s tid=0x00007fc6c0965800 nid=0x3503 runnable  
+"StrDedup" os_prio=31 cpu=12.06ms elapsed=93.13s tid=0x00007fc6c100c000 nid=0x3803 runnable  
+
+"VM Periodic Task Thread" os_prio=31 cpu=59.51ms elapsed=93.07s tid=0x00007fc6c106d000 nid=0x5f03 waiting on condition  
+
+JNI global refs: 31, weak refs: 0
+

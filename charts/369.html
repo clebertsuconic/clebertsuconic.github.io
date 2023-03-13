@@ -10,18 +10,13 @@ $("#histogram").DataTable();
 } );
 </script>
 <body>
-<h1>Allocations for [Lio.netty.buffer.LongPriorityQueue;</h2>
+<h1>Allocations for org.apache.activemq.artemis.utils.critical.CriticalMeasure</h2>
 <div id="bytesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <div id="instancesChart" style="width:100%; max-width:1600px; height:500px;"></div> 
 <table id="histogram" class="display">
-<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th></tr></thead>
+<thead><tr><th>Time</th><th>Bytes</th><th>Instances</th><th>links</th></tr></thead>
 <tbody>
-<tr><td>'09:09:13:26'</td><td>1440</td><td>10</td></tr>
-<tr><td>'09:09:13:31'</td><td>2160</td><td>15</td></tr>
-<tr><td>'09:09:13:36'</td><td>2592</td><td>18</td></tr>
-<tr><td>'09:09:13:41'</td><td>2880</td><td>20</td></tr>
-<tr><td>'09:09:13:46'</td><td>3168</td><td>22</td></tr>
-<tr><td>'09:09:13:51'</td><td>3456</td><td>24</td></tr>
+<tr><td>2023/03/13 09:34:55:210</td><td>960</td><td>24</td><td>  <a href='../logs/GC_histogram_20230313093455210.log'>Histogram</a>  <a href='../logs/thread_dump_20230313093455210.log'>Tdump</a>  <a href='../logs/thread_dump_20230313093455210.html'>Analyzer</a></td></tr>
 </tbody></table>
 <script>
 google.charts.load('current', {'packages':['corechart']});
@@ -29,21 +24,11 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 var dataBytes = google.visualization.arrayToDataTable([
 ['Date', 'Bytes']
-,['09:09:13:26',1440]
-,['09:09:13:31',2160]
-,['09:09:13:36',2592]
-,['09:09:13:41',2880]
-,['09:09:13:46',3168]
-,['09:09:13:51',3456]
+,['09:34:55',960]
 ]);
 var dataInstances = google.visualization.arrayToDataTable([
 ['Date', 'Instances']
-,['09:09:13:26',10]
-,['09:09:13:31',15]
-,['09:09:13:36',18]
-,['09:09:13:41',20]
-,['09:09:13:46',22]
-,['09:09:13:51',24]
+,['09:34:55',24]
 ]);
 var optionsBytes = {
  title: 'Bytes allocated',
